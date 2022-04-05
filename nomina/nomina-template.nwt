@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <title>{{ns.tituloDocumento}}</title>
+    <link href="nomina-style.css" rel="stylesheet">
+  </head>
+  <body>
+    {% block empresa %}{% endblock %}
+    {% block empleado %}{% endblock %}
+    {% block periodo %}{% endblock %}
+    {% block devengos %}{% endblock %}
+    {% block deducciones %}{% endblock %}
+    {% block liquido %}{% endblock %}
+    {% block aportacion %}{% endblock %}
+  </body>
+</html>

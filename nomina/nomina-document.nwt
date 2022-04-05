@@ -1,0 +1,23 @@
+{% extends nomina-template.nwt %}
+
+{% block empresa %}
+  Empresa
+{% endblock %}
+
+{% block empleado %}
+{% endblock %}
+
+{% block periodo %}
+{% endblock %}
+
+{% block devengos %}
+{% endblock %}
+
+{% block deducciones %}
+{% endblock %}
+
+{% block liquido %}
+{% endblock %}
+
+{% block aportacion %}
+{% endblock %}

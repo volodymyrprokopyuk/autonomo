@@ -1,0 +1,59 @@
+%YAML 1.2
+%TAG !n! tag:nimyaml.org,2016:
+--- !n!custom:NominaSalida 
+tituloDocumento: Nómina Ene 2022
+diasLiquidacion: 31
+percepcionSalarial: 
+  salarioBase: 1788.25
+  complementoSalarial: 6545.08
+devengos: 
+  totalDevengado: 8333.33
+  totalDevengadoP: 100.0
+deducciones: 
+  cotizacionEmpleado: 
+    cc: 
+      base: 4139.4
+      tipo: 4.7
+      importe: 194.55
+    desempleo: 
+      base: 4139.4
+      tipo: 1.55
+      importe: 64.16
+    fp: 
+      base: 4139.4
+      tipo: 0.1
+      importe: 4.14
+    totalAportacion: 262.85
+    totalAportacionP: 3.15
+  retencionIRPF: 
+    irpf: 
+      base: 8333.33
+      tipo: 34.0
+      importe: 2833.33
+  totalDeducir: 3096.18
+  totalDeducirP: 37.15
+liquidoPercibir: 5237.15
+liquidoPercibirP: 62.85
+aportacionEmpresa: 
+  cc: 
+    base: 4139.4
+    tipo: 23.6
+    importe: 976.9
+  atyep: 
+    base: 4139.4
+    tipo: 1.65
+    importe: 68.3
+  desempleo: 
+    base: 4139.4
+    tipo: 5.5
+    importe: 227.67
+  fp: 
+    base: 4139.4
+    tipo: 0.6
+    importe: 24.84
+  fogasa: 
+    base: 4139.4
+    tipo: 0.2
+    importe: 8.279999999999999
+  totalAportacionEmpresa: 1305.99
+  totalAportacionEmpresaP: 15.67

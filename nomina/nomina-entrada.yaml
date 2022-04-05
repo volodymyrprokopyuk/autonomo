@@ -1,0 +1,41 @@
+%YAML 1.2
+---
+empresa:
+  nombre: Nombre de la empresa
+  domicilio: Domicilio de la empresa
+  cif: CIF-01234
+  ccc: CCC-56789
+empleado:
+  nombre: Nombre del empleado
+  apellidos: Apellidos del empleado
+  domicilio: Domicilio del empleado
+  nif: NIF-01234
+  nss: NSS-56789
+  categoriaProfesional: 1
+  grupoCotizacion: Ingenieros y licenciados
+  profesion: Software architect
+periodoLiquidacion: [2022-01-01, 2022-01-31]
+condicionesSalariales:
+  salarioBrutoAnual: 100000.00
+  numeroPagas: 12
+  salarioBase: 1788.25
+tiposRetencion:
+  cotizacionSS:
+    baseCC: 4139.40
+    baseCP: 4139.40
+    cc:
+      empleado: 4.70
+      empresa: 23.60
+    desempleo:
+      empleado: 1.55
+      empresa: 5.50
+    fp:
+      empleado: 0.10
+      empresa: 0.60
+    atyep:
+      empleado: 0.00
+      empresa: 1.65
+    fogasa:
+      empleado: 0.00
+      empresa: 0.20
+  tipoIRPF: 34
