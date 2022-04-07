@@ -1,23 +1,77 @@
 {% extends nomina-template.nwt %}
 
 {% block empresa %}
-  Empresa
+  <section id="empresa">
+    {{title(ne.empresa.nombre)}}
+    {{subtitle(ne.empresa.domicilio)}}
+    {{fact("CIF: ", ne.empresa.cif)}}
+    {{fact("CCC: ", ne.empresa.ccc)}}
+  </section>
 {% endblock %}
 
 {% block empleado %}
+  <section id="empleado">
+    {{title(ne.empleado.apellidos & " " & ne.empleado.nombre)}}
+    {{subtitle(ne.empleado.domicilio)}}
+    {{fact("NIF: ", ne.empleado.nif)}}
+    {{fact("NSS: ", ne.empleado.nss)}}
+    {{fact("Categoría profesional: ", ne.empleado.categoriaProfesional)}}
+    {{fact("Grupo de cotización: ", ne.empleado.grupoCotizacion)}}
+    {{fact("Profesión: ", ne.empleado.profesion)}}
+  </section>
 {% endblock %}
 
 {% block periodo %}
+  <section id="periodo">
+    {{fact("Período de liquidación: ", ns.periodoLiquidacionF)}}
+    {{fact("Días: ", $ns.diasLiquidacion)}}
+  </section>
 {% endblock %}
 
 {% block devengos %}
+  <section id="devengos">
+    <h1>Devengos</h1>
+    {{fact("Salario bruto anual: ",
+      money(ne.condicionesSalariales.salarioBrutoAnual))}}
+    {{fact("Número de pagas: ", $ne.condicionesSalariales.numeroPagas)}}
+    <table class="tax">
+      <tr>
+        <th>Concepto</th>
+        <th>Importe</th>
+        <th></th>
+      </tr>
+      <tr>
+        <td>Salario base</td>
+        <td>{{money(ns.percepcionSalarial.salarioBase)}}</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Complemento salarial</td>
+        <td>{{money(ns.percepcionSalarial.complementoSalarial)}}</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td class="total">Total devengado</td>
+        <td>{{money(ns.devengos.totalDevengado)}}</td>
+        <td class="percent">{{percent(ns.devengos.totalDevengadoP)}}%</td>
+      </tr>
+    </table>
+  </section>
 {% endblock %}
 
 {% block deducciones %}
+  <section id="deducciones">
+    <h1>Deducciones</h1>
+  </section>
 {% endblock %}
 
 {% block liquido %}
+  <section id="liquido">
+  </section>
 {% endblock %}
 
 {% block aportacion %}
+  <section id="aportacion">
+    <h1>Aporación de empresa</h1>
+  </section>
 {% endblock %}

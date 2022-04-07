@@ -1,0 +1,14 @@
+{% macro title(title: string): string = %}
+  <div class="title">{{title}}</div>
+{% endmacro %}
+
+{% macro subtitle(subtitle: string): string = %}
+  <div class="subtitle">{{subtitle}}</div>
+{% endmacro %}
+
+{% macro fact(name, value: string): string = %}
+  <div class="fact">
+    <span class="fact-name">{{name}}</span>
+    <span class="fact-value">{{value}}</span>
+  </div>
+{% endmacro %}

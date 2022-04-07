@@ -1,17 +1,25 @@
-import std/[times, math]
+import std/[strformat, times, math]
 import nominamodel
 
 let esLocale = DateTimeLocale(
-  MMM: ["Ene", "Feb", "Mar", "Abr", "May", "Jun",
-        "Jul", "Ago", "Sep", "Oct", "Nov", "Dec"],
-  MMMM: ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio",
-         "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"],
-  ddd: ["Lun", "Mar", "Mie", "Jue", "Vie", "Sab", "Dom"],
-  dddd: ["Luens", "Martes", "Miércoles", "Jueves", "Viernes",
-         "Sábado", "Domingo"])
+  MMM: ["ene", "feb", "mar", "abr", "may", "jun",
+        "jul", "ago", "sep", "oct", "nov", "dec"],
+  MMMM: ["enero", "febrero", "marzo", "abril", "mayo", "junio",
+         "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"],
+  ddd: ["lun", "mar", "mie", "jue", "vie", "sab", "dom"],
+  dddd: ["luens", "martes", "miércoles", "jueves", "viernes",
+         "sábado", "domingo"])
 
 proc tituloDocumento(periodoLiquidacion: Slice[Time]): string =
-  "Nómina " & periodoLiquidacion.a.local.format("MMM YYYY", esLocale)
+  let a = periodoLiquidacion.a.local.format("MMMM YYYY", esLocale)
+  fmt "Nómina {a}"
+
+proc periodoLiquidacionF(periodoLiquidacion: Slice[Time]): string =
+  let
+    timeFormat = "d' de 'MMMM' de 'YYYY"
+    a = periodoLiquidacion.a.local.format(timeFormat, esLocale)
+    b = periodoLiquidacion.b.local.format(timeFormat, esLocale)
+  fmt "del {a} al {b}"
 
 func diasLiquidacion(periodoLiquidacion: Slice[Time]): int =
   (periodoLiquidacion.b - periodoLiquidacion.a).inDays.int + 1
@@ -66,6 +74,8 @@ func aportacionEmpresa(css: CotizacionSS): AportacionEmpresa =
 proc calcularNomina*(ne: NominaEntrada): NominaSalida =
   result.tituloDocumento =
     tituloDocumento(ne.periodoLiquidacion)
+  result.periodoLiquidacionF =
+    periodoLiquidacionF(ne.periodoLiquidacion)
   result.diasLiquidacion =
     diasLiquidacion(ne.periodoLiquidacion)
   result.percepcionSalarial =

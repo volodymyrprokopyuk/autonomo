@@ -87,6 +87,7 @@ type
 
   NominaSalida* = object
     tituloDocumento*: string
+    periodoLiquidacionF*: string
     diasLiquidacion*: int # Del período de liquidación
     percepcionSalarial*: PercepcionSalarial
     devengos*: Devengos

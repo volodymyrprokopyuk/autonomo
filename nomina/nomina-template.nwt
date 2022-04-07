@@ -1,3 +1,5 @@
+{% importnwt "nomina-macro.nwt" %}
+
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -6,12 +8,14 @@
     <link href="nomina-style.css" rel="stylesheet">
   </head>
   <body>
-    {% block empresa %}{% endblock %}
-    {% block empleado %}{% endblock %}
-    {% block periodo %}{% endblock %}
-    {% block devengos %}{% endblock %}
-    {% block deducciones %}{% endblock %}
-    {% block liquido %}{% endblock %}
-    {% block aportacion %}{% endblock %}
+    <main id="nomina">
+      {% block empresa %}{% endblock %}
+      {% block empleado %}{% endblock %}
+      {% block periodo %}{% endblock %}
+      {% block devengos %}{% endblock %}
+      {% block deducciones %}{% endblock %}
+      {% block liquido %}{% endblock %}
+      {% block aportacion %}{% endblock %}
+    </main>
   </body>
 </html>

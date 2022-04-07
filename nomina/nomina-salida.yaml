@@ -1,7 +1,8 @@
 %YAML 1.2
 %TAG !n! tag:nimyaml.org,2016:
 --- !n!custom:NominaSalida 
-tituloDocumento: Nómina Ene 2022
+tituloDocumento: Nómina enero 2022
+periodoLiquidacionF: del 1 de enero de 2022 al 31 de enero de 2022
 diasLiquidacion: 31
 percepcionSalarial: 
   salarioBase: 1788.25
