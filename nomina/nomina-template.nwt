@@ -9,8 +9,10 @@
   </head>
   <body>
     <main id="nomina">
-      {% block empresa %}{% endblock %}
-      {% block empleado %}{% endblock %}
+      <header id="identificacion">
+        {% block empresa %}{% endblock %}
+        {% block empleado %}{% endblock %}
+      </header>
       {% block periodo %}{% endblock %}
       {% block devengos %}{% endblock %}
       {% block deducciones %}{% endblock %}

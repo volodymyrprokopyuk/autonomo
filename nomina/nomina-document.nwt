@@ -23,8 +23,8 @@
 
 {% block periodo %}
   <section id="periodo">
-    {{fact("Período de liquidación: ", ns.periodoLiquidacionF)}}
-    {{fact("Días: ", $ns.diasLiquidacion)}}
+    {{fact("Período de liquidación: ",
+      fmt "{ns.periodoLiquidacionF} ({ns.diasLiquidacion} dias)")}}
   </section>
 {% endblock %}
 
@@ -34,7 +34,7 @@
     {{fact("Salario bruto anual: ",
       money(ne.condicionesSalariales.salarioBrutoAnual))}}
     {{fact("Número de pagas: ", $ne.condicionesSalariales.numeroPagas)}}
-    <table class="tax">
+    <table class="income">
       <tr>
         <th>Concepto</th>
         <th>Importe</th>
@@ -51,7 +51,7 @@
         <td></td>
       </tr>
       <tr>
-        <td class="total">Total devengado</td>
+        <td class="total">Total devengado (A)</td>
         <td>{{money(ns.devengos.totalDevengado)}}</td>
         <td class="percent">{{percent(ns.devengos.totalDevengadoP)}}%</td>
       </tr>
@@ -62,16 +62,125 @@
 {% block deducciones %}
   <section id="deducciones">
     <h1>Deducciones</h1>
+    <table class="tax">
+      <tr>
+        <th>Concepto</th>
+        <th>Base</th>
+        <th>Tipo</th>
+        <th>Importe</th>
+        <th></th>
+      </tr>
+      <tr>
+        <td>Contingencias comunes</td>
+        <td>{{money(ns.deducciones.cotizacionEmpleado.cc.base)}}</td>
+        <td>{{percent(ns.deducciones.cotizacionEmpleado.cc.tipo)}}</td>
+        <td>{{money(ns.deducciones.cotizacionEmpleado.cc.importe)}}</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Desempleo</td>
+        <td>{{money(ns.deducciones.cotizacionEmpleado.desempleo.base)}}</td>
+        <td>{{percent(ns.deducciones.cotizacionEmpleado.desempleo.tipo)}}</td>
+        <td>{{money(ns.deducciones.cotizacionEmpleado.desempleo.importe)}}</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Formación profesional</td>
+        <td>{{money(ns.deducciones.cotizacionEmpleado.fp.base)}}</td>
+        <td>{{percent(ns.deducciones.cotizacionEmpleado.fp.tipo)}}</td>
+        <td>{{money(ns.deducciones.cotizacionEmpleado.fp.importe)}}</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Total aportacion del empleado</td>
+        <td></td>
+        <td></td>
+        <td>{{money(ns.deducciones.cotizacionEmpleado.totalAportacion)}}</td>
+        <td>{{percent(ns.deducciones.cotizacionEmpleado.totalAportacionP)}}%</td>
+      </tr>
+      <tr>
+        <td>Retención IRPF</td>
+        <td>{{money(ns.deducciones.retencionIRPF.irpf.base)}}</td>
+        <td>{{percent(ns.deducciones.retencionIRPF.irpf.tipo)}}</td>
+        <td>{{money(ns.deducciones.retencionIRPF.irpf.importe)}}</td>
+        <td>{{percent(ns.deducciones.retencionIRPF.irpf.tipo)}}%</td>
+      </tr>
+      <tr>
+        <td>Total a deducir (B)</td>
+        <td></td>
+        <td></td>
+        <td>{{money(ns.deducciones.totalDeducir)}}</td>
+        <td>{{percent(ns.deducciones.totalDeducirP)}}%</td>
+      </tr>
+    </table>
   </section>
 {% endblock %}
 
 {% block liquido %}
   <section id="liquido">
+    <table class="income">
+      <tr>
+        <td>Líquido a percibir (A - B)</td>
+        <td>{{money(ns.liquidoPercibir)}}</td>
+        <td>{{percent(ns.liquidoPercibirP)}}%</td>
+      </tr>
+    </table>
   </section>
 {% endblock %}
 
 {% block aportacion %}
   <section id="aportacion">
-    <h1>Aporación de empresa</h1>
+    <h1>Aporación de la empresa</h1>
+    <table class="tax">
+      <tr>
+        <th>Concepto</th>
+        <th>Base</th>
+        <th>Tipo</th>
+        <th>Importe</th>
+        <th></th>
+      </tr>
+      <tr>
+        <td>Contingencias comunes</td>
+        <td>{{money(ns.aportacionEmpresa.cc.base)}}</td>
+        <td>{{percent(ns.aportacionEmpresa.cc.tipo)}}</td>
+        <td>{{money(ns.aportacionEmpresa.cc.importe)}}</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>AT y EP</td>
+        <td>{{money(ns.aportacionEmpresa.atyep.base)}}</td>
+        <td>{{percent(ns.aportacionEmpresa.atyep.tipo)}}</td>
+        <td>{{money(ns.aportacionEmpresa.atyep.importe)}}</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Desempleo</td>
+        <td>{{money(ns.aportacionEmpresa.desempleo.base)}}</td>
+        <td>{{percent(ns.aportacionEmpresa.desempleo.tipo)}}</td>
+        <td>{{money(ns.aportacionEmpresa.desempleo.importe)}}</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Formación profesional</td>
+        <td>{{money(ns.aportacionEmpresa.fp.base)}}</td>
+        <td>{{percent(ns.aportacionEmpresa.fp.tipo)}}</td>
+        <td>{{money(ns.aportacionEmpresa.fp.importe)}}</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>FOGASA</td>
+        <td>{{money(ns.aportacionEmpresa.fogasa.base)}}</td>
+        <td>{{percent(ns.aportacionEmpresa.fogasa.tipo)}}</td>
+        <td>{{money(ns.aportacionEmpresa.fogasa.importe)}}</td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>Total aporacón de la empresa</td>
+        <td></td>
+        <td></td>
+        <td>{{money(ns.aportacionEmpresa.totalAportacionEmpresa)}}</td>
+        <td>{{percent(ns.aportacionEmpresa.totalAportacionEmpresaP)}}%</td>
+      </tr>
+    </table>
   </section>
 {% endblock %}

@@ -1,1 +1,90 @@
 @import "modern-normalize.min.css";
+
+/* Layout */
+main {
+  width: 60%;
+  margin: auto;
+}
+header {
+  display: flex;
+}
+header > section {
+  flex-grow: 1;
+}
+/* section {border: thin solid gray;} */
+
+/* Spacing */
+section {
+  margin-bottom: 0.8em;
+}
+h1 {
+  margin: 0.4em auto 0.3em auto;
+}
+table {
+  width: 100%
+}
+table th {
+  border-bottom: 0.1em solid gray;
+}
+th {
+  padding-bottom: 0.4em;
+}
+tr:nth-child(2) > td {
+  padding-top: 0.4em;
+}
+.income td:nth-child(1) {
+  width: 70%;
+}
+.income td:nth-child(2) {
+  width: 20%;
+}
+.income td:nth-child(3) {
+  width: 10%;
+}
+.tax td:nth-child(1) {
+  width: 40%;
+}
+.tax td:nth-child(2) {
+  width: 20%;
+}
+.tax td:nth-child(3) {
+  width: 10%;
+}
+.tax td:nth-child(4) {
+  width: 20%;
+}
+.tax td:nth-child(5) {
+  width: 10%;
+}
+
+/* Alignment */
+.income td:nth-child(2),
+.income td:nth-child(3) {
+  text-align: right;
+}
+.tax td:nth-child(2),
+.tax td:nth-child(3),
+.tax td:nth-child(4),
+.tax td:nth-child(5) {
+  text-align: right;
+}
+
+/* Font */
+@font-face {
+  font-family: NotoSansDisplay;
+  src: url("NotoSansDisplay-VariableFont_wdth,wght.ttf") format("ttf");
+}
+body {
+  font-family: NotoSansDisplay, sans-serif;
+  font-size: 1.2em;
+  font-weight: 300;
+}
+h1 {
+  font-size: 1.3em;
+  font-weight: 700;
+}
+.income td:nth-child(3),
+.tax td:nth-child(3),
+.tax td:nth-child(5) {
+  font-style: italic;
+}
