@@ -52,8 +52,8 @@
       </tr>
       <tr>
         <td class="total">Total devengado (A)</td>
-        <td>{{money(ns.devengos.totalDevengado)}}</td>
-        <td class="percent">{{percent(ns.devengos.totalDevengadoP)}}%</td>
+        <td class="total importe">{{money(ns.devengos.totalDevengado)}}</td>
+        <td >{{percent(ns.devengos.totalDevengadoP)}}%</td>
       </tr>
     </table>
   </section>
@@ -92,10 +92,12 @@
         <td></td>
       </tr>
       <tr>
-        <td>Total aportacion del empleado</td>
+        <td class="total">Total aportacion del empleado</td>
         <td></td>
         <td></td>
-        <td>{{money(ns.deducciones.cotizacionEmpleado.totalAportacion)}}</td>
+        <td class="total">
+          {{money(ns.deducciones.cotizacionEmpleado.totalAportacion)}}
+        </td>
         <td>{{percent(ns.deducciones.cotizacionEmpleado.totalAportacionP)}}%</td>
       </tr>
       <tr>
@@ -106,10 +108,10 @@
         <td>{{percent(ns.deducciones.retencionIRPF.irpf.tipo)}}%</td>
       </tr>
       <tr>
-        <td>Total a deducir (B)</td>
+        <td class="total">Total a deducir (B)</td>
         <td></td>
         <td></td>
-        <td>{{money(ns.deducciones.totalDeducir)}}</td>
+        <td class="total importe">{{money(ns.deducciones.totalDeducir)}}</td>
         <td>{{percent(ns.deducciones.totalDeducirP)}}%</td>
       </tr>
     </table>
@@ -120,8 +122,8 @@
   <section id="liquido">
     <table class="income">
       <tr>
-        <td>Líquido a percibir (A - B)</td>
-        <td>{{money(ns.liquidoPercibir)}}</td>
+        <td class="total">Líquido a percibir (A - B)</td>
+        <td class="total importe">{{money(ns.liquidoPercibir)}}</td>
         <td>{{percent(ns.liquidoPercibirP)}}%</td>
       </tr>
     </table>
@@ -175,10 +177,12 @@
         <td></td>
       </tr>
       <tr>
-        <td>Total aporacón de la empresa</td>
+        <td class="total">Total aporacón de la empresa</td>
         <td></td>
         <td></td>
-        <td>{{money(ns.aportacionEmpresa.totalAportacionEmpresa)}}</td>
+        <td class="total importe">
+          {{money(ns.aportacionEmpresa.totalAportacionEmpresa)}}
+        </td>
         <td>{{percent(ns.aportacionEmpresa.totalAportacionEmpresaP)}}%</td>
       </tr>
     </table>

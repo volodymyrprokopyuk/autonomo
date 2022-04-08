@@ -1,9 +1,11 @@
 @import "modern-normalize.min.css";
 
 /* Layout */
-main {
-  width: 60%;
-  margin: auto;
+@media screen {
+  main {
+    width: 60%;
+    margin: auto;
+  }
 }
 header {
   display: flex;
@@ -11,7 +13,6 @@ header {
 header > section {
   flex-grow: 1;
 }
-/* section {border: thin solid gray;} */
 
 /* Spacing */
 section {
@@ -76,15 +77,46 @@ tr:nth-child(2) > td {
 }
 body {
   font-family: NotoSansDisplay, sans-serif;
-  font-size: 1.2em;
+  font-size: 1.1em;
   font-weight: 300;
+  line-height: 1.30em;
 }
 h1 {
   font-size: 1.3em;
   font-weight: 700;
 }
+.title {
+  font-size: 1.3em;
+  font-weight: 400;
+}
+.subtitle {
+  font-style: italic;
+  color: gray;
+}
+.fact-name {
+  font-weight: 400;
+  color: gray;
+}
+.fact-value {
+  font-weight: 400;
+}
+td.total {
+  font-weight: 600;
+}
 .income td:nth-child(3),
 .tax td:nth-child(3),
 .tax td:nth-child(5) {
   font-style: italic;
+}
+#devengos .total.importe {
+  color: dodgerblue;
+}
+#deducciones .total.importe {
+  color: crimson;
+}
+#liquido .total.importe {
+  color: forestgreen;
+}
+#aportacion .total.importe {
+  color: orangered;
 }
