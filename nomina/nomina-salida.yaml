@@ -6,9 +6,9 @@ periodoLiquidacionF: del 1 de enero de 2022 al 31 de enero de 2022
 diasLiquidacion: 31
 percepcionSalarial: 
   salarioBase: 1788.25
-  complementoSalarial: 6545.08
+  complementoSalarial: 14878.42
 devengos: 
-  totalDevengado: 8333.33
+  totalDevengado: 16666.67
   totalDevengadoP: 100.0
 deducciones: 
   cotizacionEmpleado: 
@@ -25,16 +25,16 @@ deducciones:
       tipo: 0.1
       importe: 4.14
     totalAportacion: 262.85
-    totalAportacionP: 3.15
+    totalAportacionP: 1.58
   retencionIRPF: 
     irpf: 
-      base: 8333.33
-      tipo: 34.0
-      importe: 2833.33
-  totalDeducir: 3096.18
-  totalDeducirP: 37.15
-liquidoPercibir: 5237.15
-liquidoPercibirP: 62.85
+      base: 16666.67
+      tipo: 39.47
+      importe: 6578.33
+  totalDeducir: 6841.18
+  totalDeducirP: 41.05
+liquidoPercibir: 9825.489999999998
+liquidoPercibirP: 58.95
 aportacionEmpresa: 
   cc: 
     base: 4139.4
@@ -57,4 +57,4 @@ aportacionEmpresa:
     tipo: 0.2
     importe: 8.279999999999999
   totalAportacionEmpresa: 1305.99
-  totalAportacionEmpresaP: 15.67
+  totalAportacionEmpresaP: 7.84
