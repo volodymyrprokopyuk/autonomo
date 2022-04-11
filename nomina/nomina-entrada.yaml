@@ -16,7 +16,7 @@ empleado:
   profesion: Software architect
 periodoLiquidacion: [2022-01-01, 2022-01-31]
 condicionesSalariales:
-  salarioBrutoAnual: 200000.00
+  salarioBrutoAnual: 150000.00
   numeroPagas: 12
   salarioBase: 1788.25
 tiposRetencion:
@@ -42,6 +42,13 @@ tiposRetencion:
   # tipoIRPF: 33.94 # 100k => 5242.15
   # tipoIRPF: 35.78 # 120k => 6159.15
   # tipoIRPF: 37.10 # 140k => 7075.49
+  tipoIRPF: 37.63 # 150k => 7533.40
   # tipoIRPF: 38.09 # 160k => 7991.81
   # tipoIRPF: 38.85 # 180k => 8909.65
-  tipoIRPF: 39.47 # 200k => 9825.49
+  # tipoIRPF: 39.47 # 200k => 9825.49
+
+# Asalariado (permanent)
+#   150k / 12 * 0.6 => 7500 neto per month
+# Autónomo (freelance)
+#   150k / 11 / 22 => 620 bruto per day
+#   630 * 20 * 0.6 => 7560 neto per month
